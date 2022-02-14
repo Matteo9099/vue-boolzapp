@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:lightgrey ;
+    font-family: sans-serif;
+}
+
+.container-body{
+    height: 150px;
+    background-color: green;
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
+/* regole container principale */
+.container{
+    max-width: 1200px;
+    height: 90vh;
+    margin: 20px auto;
+    background-color: red;
+    position: relative;
+}
+
+/* regole Aside */
+aside{
+    width: 400px;
+    border-right: 3px solid #000;
+    height: 100%;
+}
+
+/* regole info utente */
+.info-utente{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    height: 80px;
+    background-color: yellow;
+}
+
+/* regola generale per le img */
+img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+/* regole name-utente */
+.name-utente{
+    display: flex;
+    align-items: center;
+}
+
+/* regole icon-utente */
+.icon-utente ul{
+    list-style-type: none;
+    display: flex;
+}
+
+.icon-utente ul li{
+    margin: 0 10px;
+}
+
+.icon-utente ul li a{
+    color: gray;
+    font-size: 20px;
+}
+
+/* regole norifiche main */
+.notifiche{
+    display: flex;
+    background-color: rgb(29, 230, 230);
+    padding: 20px;
+}
+
+.notifiche i{
+    background-color: #fff;
+    color:  rgb(29, 230, 230);
+    padding: 15px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.notifiche p{
+    font-weight: bold;
+}
+
+.notifiche a{
+    color: grey;
+}
+
+/* regole search input */
+.search-input{
+    display: flex;
+    align-items: center;
+}
+
+.search-input input{
+    width: 100%;
+    padding: 10px 27px;
+    border-left: none;
+}
+
+.search-input i{
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px 5px;
+    color: grey;
+    position: absolute;
+}
