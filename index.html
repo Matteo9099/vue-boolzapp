@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boolzap</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 </head>
 
@@ -17,7 +19,7 @@
 
     <div id="app">
         <div class="container">
-        <!-- Creazione Aside -->
+            <!-- Creazione Aside -->
             <aside>
                 <header>
                     <!-- Info utente -->
@@ -29,13 +31,13 @@
                         <div class="icon-utente">
                             <ul>
                                 <li><a href="#"><i class="fa-solid fa-circle-notch"></i></a></li>
-                                <li><a href="#"><i class="fa-solid fa-message"></i></a></li> 
-                                <li><a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a></li> 
+                                <li><a href="#"><i class="fa-solid fa-message"></i></a></li>
+                                <li><a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a></li>
                             </ul>
                         </div>
                     </div>
                 </header>
-    
+
                 <main>
                     <!-- crezione notifiche -->
                     <div class="notifiche">
@@ -55,20 +57,68 @@
                     <!-- creazione contatti -->
                     <div v-for="(contact, index) in contacts" class="contatti-chat">
                         <!-- creazione dinaminca immagini -->
-                        <img :src= "`img/avatar${contact.avatar}.jpg`">
+                        <img :src="`img/avatar${contact.avatar}.jpg`">
                         <!-- creazione dinamica contatti -->
                         <div class="contact-text">
                             <p>{{contact.name}}</p>
+                            <p class="contact-message">testo inviato...</p>
+                        </div>
+                        <p class="contact-date">10/02/2022 15:26</p>
+                    </div>
+                </main>
+            </aside>
+
+
+            <!-- creazione lato chat -->
+            <div class="container-chat">
+                <div class="info-utente">
+                    <div class="name-utente">
+                        <img src="img/avatar_1.jpg" alt="foto utente">
+                        <div class="name-utente-accesso">
+                            <h3 class="name-utente-text">Michele</h3>
+                            <p class="contact-message">Ultimo accesso oggi alle 14/02/2022 16:15</p>
                         </div>
                     </div>
+                    <div class="icon-utente">
+                        <ul>
+                            <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                            <li><a href="#"><i class="fa-solid fa-paperclip"></i></a></li>
+                            <li><a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chat">
+                    <div>
+                        <ul>
+                           <li v-for="(message, index) in contacts[currentIndex].messages" class="message">
+                               <div class="message-chat">
+                                    <p>{{message.text}}</p>
+                                    <p>{{message.date}}</p>
+                               </div>
+                           </li> 
+                        </ul>
+                    </div>
+                </div>
 
-                </main>
-    
-            </aside>
-        </div>            
+                <footer>
+                    <div class="message-user">
+                        <div class="emoji">
+                            <i class="fa-regular fa-face-smile"></i>
+                        </div>
+                        <div class="text-input">
+                            <input type="text" placeholder="Scrivi un messaggio">
+                        </div>
+                        <div class="registra">
+                            <i class="fa-solid fa-microphone"></i>
+                        </div>
+                    </div>
+                </footer>
+
+            </div>
+        </div>
     </div>
 
-    
+
 
 
 

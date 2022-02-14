@@ -20,15 +20,16 @@ body{
 /* regole container principale */
 .container{
     max-width: 1200px;
+    display: flex;
     height: 90vh;
     margin: 20px auto;
-    background-color: red;
     position: relative;
+    background-image: url('img/mine.jpg');
 }
 
 /* regole Aside */
 aside{
-    width: 400px;
+    width: 500px;
     border-right: 3px solid #000;
     height: 100%;
     background-color: ghostwhite;
@@ -41,6 +42,7 @@ aside{
     align-items: center;
     padding: 0 10px;
     height: 80px;
+    width: 100%;
     background-color: rgb(233, 231, 231);
 }
 
@@ -118,12 +120,113 @@ img{
 
 /* regole contatti */
 .contatti-chat{
+    width: 90%;
     display: flex;
-    align-items: center;
+    font-weight: bold;
     padding: 8px 5px;
     border-bottom: 1px solid gray;
 }
 
 .contatti-chat p{
     margin-left: 20px;
+}
+
+.contact-text{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.contact-message{
+    font-size: 0.9rem;
+    color: grey;
+    font-weight: 100;
+    margin-top: 5px;
+}
+
+.contact-date{
+    color: grey;
+    font-size: 0.7rem;
+}
+
+/* regole container-chat */
+.container-chat{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* regole accesso utente */
+.name-utente-accesso{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+/* regole per aggiungere margine dalla barra contatto al primo messaggio */
+.container-chat .info-utente{
+    margin-bottom: 50px;
+}
+
+/* regole message */
+.message{
+    display: flex;
+    padding: 10px;
+}
+
+.message-chat{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    width: 100%;
+    margin: 0 50px;
+}
+
+.message .send{
+    justify-content: end;
+    background-color: red;
+}
+
+.message .riceived{
+    justify-content: start;
+}
+
+
+
+
+
+
+
+/* regole per message user input */
+footer{
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(184, 179, 179);
+    width: 100%;
+}
+
+.message-user{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.text-input{
+    width: 100%;
+    padding: 10px;
+}
+
+.text-input input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.message-user .emoji{
+    padding: 0 20px;
+}
+
+.message-user .registra{
+    padding: 0 20px;
 }
