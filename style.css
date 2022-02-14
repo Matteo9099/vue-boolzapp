@@ -170,19 +170,25 @@ img{
 }
 
 /* regole message */
-.message{
-    display: flex;
-    padding: 10px;
-}
-
-.message-chat{
+.chat{
     display: flex;
     flex-direction: column;
-    width: 100%;
-    margin: 0 50px;
+    margin: 10px 30px;
 }
 
+.sent{
+    align-self: flex-end;
+    background-color: rgb(156, 231, 106);
+    padding: 8px 15px;
+    border-radius: 5px;
+}
 
+.received{
+    align-self: flex-start;
+    background-color: rgb(255, 255, 255);
+    padding: 8px 15px;
+    border-radius: 5px;
+}
 
 
 

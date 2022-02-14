@@ -87,17 +87,9 @@
                         </ul>
                     </div>
                 </div>
-                <div class="chat">
-                    <div>
-                        <ul>
-                           <li v-for="(message, index) in contacts[currentIndex].messages" class="message">
-                               <div class="message-chat">
-                                    <p>{{message.text}}</p>
-                                    <p>{{message.date}}</p>
-                               </div>
-                           </li> 
-                        </ul>
-                    </div>
+                <div class="chat" v-for="(message, index) in contacts[currentIndex].messages" :class="message.status">
+                    <p>{{message.text}}</p>
+                    <p class="contact-message">{{message.date}}</p>
                 </div>
 
                 <footer>
