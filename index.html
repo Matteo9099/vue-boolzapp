@@ -52,6 +52,15 @@
                         <input type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
 
+                    <!-- creazione contatti -->
+                    <div v-for="(contact, index) in contacts" class="contatti-chat">
+                        <!-- creazione dinaminca immagini -->
+                        <img :src= "`img/avatar${contact.avatar}.jpg`">
+                        <!-- creazione dinamica contatti -->
+                        <div class="contact-text">
+                            <p>{{contact.name}}</p>
+                        </div>
+                    </div>
 
                 </main>
     
