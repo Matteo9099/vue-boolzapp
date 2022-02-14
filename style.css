@@ -178,21 +178,9 @@ img{
 .message-chat{
     display: flex;
     flex-direction: column;
-    align-items: end;
     width: 100%;
     margin: 0 50px;
 }
-
-.message .send{
-    justify-content: end;
-    background-color: red;
-}
-
-.message .riceived{
-    justify-content: start;
-}
-
-
 
 
 
