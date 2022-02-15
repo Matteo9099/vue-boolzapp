@@ -64,28 +64,29 @@ const vue = new Vue({
         // creo un metodo che al click sul contatto mostri la conversazione del contatto cliccato
         selectChat(index) {
             this.currentIndex = index;
-        }
-    },
-    // Quando l'utente inserisce un messaggio in input digitando 'enter' il testo viene aggiunto alla chat
-    sentMessage() {
-        if(this.newMessage)
-            this.contacts.push(
-                {
-                    text: this.newMessage, status: 'sent'
-                }
-            ),
-
-            this.newMessage = '';
-
-            // gestione del timer per la risposta
-            setTimeout(() => {
+        },
+        // Quando l'utente inserisce un messaggio in input digitando 'enter' il testo viene aggiunto alla chat
+        sentMessage() {
+            if(this.newMessage)
                 this.contacts.push(
                     {
-                        text: 'Ok', status: 'received'
+                        text: this.newMessage, status: 'sent'
                     }
-                )
-            }, 1000);
+                ),
 
-            this.newMessage = '';
-        },
+                this.newMessage = '';
+
+                // gestione del timer per la risposta
+                setTimeout(() => {
+                    this.contacts.push(
+                        {
+                            text: 'Ok', status: 'received'
+                        }
+                    )
+                }, 1000);
+
+                this.newMessage = '';
+            },
+    },
+    
 })
