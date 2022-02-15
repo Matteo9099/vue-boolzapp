@@ -67,8 +67,8 @@ const vue = new Vue({
         },
         // Quando l'utente inserisce un messaggio in input digitando 'enter' il testo viene aggiunto alla chat
         sentMessage() {
-            if(this.newMessage)
-                this.contacts.push(
+            if(this.newMessage != '')
+                this.contacts[this.currentIndex].messages.push(
                     {
                         text: this.newMessage, status: 'sent'
                     }
@@ -78,7 +78,7 @@ const vue = new Vue({
 
                 // gestione del timer per la risposta
                 setTimeout(() => {
-                    this.contacts.push(
+                    this.contacts[this.currentIndex].messages.push(
                         {
                             text: 'Ok', status: 'received'
                         }
