@@ -3,6 +3,7 @@ const vue = new Vue({
     data: {
 
         currentIndex: 0,
+        search: '',
         
         contacts: [
             {
@@ -49,7 +50,19 @@ const vue = new Vue({
                 ],
             },
         ]
-
-
+    },
+    methods: {
+        // creo un metodo che filtra la ricerca dei nomi
+        filterContatti(contatto){
+            if(this.search == '') {
+                return true;
+            } else{
+                return contatto.name.toLowerCase().includes(this.search.toLowerCase());
+            }
+        },
+        // creo un metodo che al click sul contatto mostri la conversazione del contatto cliccato
+        selectChat(index) {
+            this.currentIndex = index;
+        }
     }
 })

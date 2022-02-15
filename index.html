@@ -15,8 +15,6 @@
 
 <body>
 
-    <div class="container-body"></div>
-
     <div id="app">
         <div class="container">
             <!-- Creazione Aside -->
@@ -51,17 +49,20 @@
                     <!-- creazione input chat -->
                     <div class="search-input">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input v-model="search" type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
 
                     <!-- creazione contatti -->
-                    <div v-for="(contact, index) in contacts" class="contatti-chat">
+                    <div v-for="(contact, index) in contacts" 
+                        v-if="filterContatti(contact)" 
+                        @click="selectChat(index)"
+                        class="contatti-chat">
                         <!-- creazione dinaminca immagini -->
                         <img :src="`img/avatar${contact.avatar}.jpg`">
                         <!-- creazione dinamica contatti -->
                         <div class="contact-text">
                             <p>{{contact.name}}</p>
-                            <p class="contact-message">testo inviato...</p>
+                            <p class="contact-message">{{contact.messages[contact.messages.length -1].text.slice(0,15) + '...'}}</p>
                         </div>
                         <p class="contact-date">10/02/2022 15:26</p>
                     </div>
