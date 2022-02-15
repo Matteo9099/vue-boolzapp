@@ -74,9 +74,9 @@
             <div class="container-chat">
                 <div class="info-utente">
                     <div class="name-utente">
-                        <img src="img/avatar_1.jpg" alt="foto utente">
+                        <img :src="`img/avatar${contacts[currentIndex].avatar}.jpg`" alt="foto utente">
                         <div class="name-utente-accesso">
-                            <h3 class="name-utente-text">Michele</h3>
+                            <h3 class="name-utente-text">{{contacts[currentIndex].name}}</h3>
                             <p class="contact-message">Ultimo accesso oggi alle 14/02/2022 16:15</p>
                         </div>
                     </div>
@@ -99,7 +99,7 @@
                             <i class="fa-regular fa-face-smile"></i>
                         </div>
                         <div class="text-input">
-                            <input type="text" placeholder="Scrivi un messaggio">
+                            <input type="text" v-on:keyup.enter="sentMessage()" v-model.trim="newMessage" placeholder="Scrivi un messaggio">
                         </div>
                         <div class="registra">
                             <i class="fa-solid fa-microphone"></i>
