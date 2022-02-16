@@ -94,7 +94,9 @@
                 <!-- main creazione messaggi dinamicamente -->
                 <div class="message-chat">
                     <div class="chat" v-for="(message, index) in contacts[currentIndex].messages" :class="message.status">
-                        <p>{{message.text}}</p>
+                        <p>{{message.text}}
+                            <i class="fa-solid fa-angle-down"></i>
+                        </p>
                         <p class="date-message">{{message.date}}</p>
                     </div>
                 </div>

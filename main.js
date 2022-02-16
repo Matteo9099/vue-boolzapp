@@ -5,6 +5,12 @@ const vue = new Vue({
         currentIndex: 0,
         search: '',
         newMessage: '',
+
+        randomAnswers: 
+            [
+                'È impossibile.', 'Forse sì.', 'Questo non lo sapevo.','Questo anch\'io mi sento capace di affermarlo.',
+                'Perché no?', 'Ma è chiaro!', 'Perfetto.', 'E perché non dovrei?', 'Si può anche convenire.', 'ciao'
+            ],
         
         contacts: [
             {
@@ -88,15 +94,22 @@ const vue = new Vue({
 
                 // gestione del timer per la risposta
                 setTimeout(() => {
+                    let random = this.random(this.randomAnswers);
                     this.contacts[this.currentIndex].messages.push(
                         {
-                            text: 'Ok', date: dayjs().format('DD/MM/YYYY HH:mm:ss'), status: 'received'
+                            text: this.randomAnswers[random], date: dayjs().format('DD/MM/YYYY HH:mm:ss'), status: 'received'
                         }
                     )
                 }, 1000);
 
                 this.newMessage = '';
             },
+            // creo una funzione per generare un numero random
+            random (array) {
+                const numRandom = Math.floor(Math.random()*array.length);
+                return numRandom;
+            },
+            // Funzione che cambia l'orario dell'ultimo accesso
             lastAccess(){
                 let mess = this.contacts[this.currentIndex].messages.length -1; 
                 let lastAccessDate = this.contacts[this.currentIndex].messages[mess].date;
@@ -109,6 +122,10 @@ const vue = new Vue({
                     return lastAccessDate;
                 }
                 return '';
+            },
+            // Creo una funzione che elimina il messaggio inviato
+            deleteMessage(index) {
+                this.contacts[this.currentIndex].messages.splice(index, 1);
             }
            
     },

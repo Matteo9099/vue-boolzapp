@@ -218,6 +218,13 @@ img{
     border-radius: 5px;
 }
 
+.message-chat p i{
+    font-size: 0.8rem;
+    color: gray;
+    padding-left: 50px;
+    cursor: pointer;
+}
+
 .date-message{
     font-size: 0.8rem;
     color: grey;
