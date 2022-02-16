@@ -7,7 +7,6 @@
 body{
     background-color:lightgrey ;
     font-family: sans-serif;
-    height: 100vh;
     background-image: linear-gradient(180deg, #1c9588 15%, #dadbd4 15%);
 }
 
@@ -272,7 +271,8 @@ span{
 }
 
 .message-user .emoji{
-    padding: 0 20px;
+    padding: 20px;
+    position: relative;
 }
 
 .message-user .emoji i{
@@ -285,4 +285,29 @@ span{
 
 .message-user .registra i{
    font-size: 25px;
+}
+
+.emoji-test{
+    display: none;
+    position: absolute;
+    top: -40px;
+    left: 10px;
+    background-color: #3d3a3a;
+    border-radius: 3px ;
+    padding: 5px;
+}
+
+.emoji-test ul{
+    display: flex;
+    list-style-type: none;
+}
+
+.emoji-test ul li{
+    color: rgb(225, 245, 43);
+    margin: 5px 8px;
+
+}
+
+.emoji:hover .emoji-test{
+    display: flex;
 }
