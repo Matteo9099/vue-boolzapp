@@ -9,7 +9,7 @@ const vue = new Vue({
         contacts: [
             {
                 name: 'Michele',
-                avatar: '_1',
+                avatar: '_4',
                 visible: true,
                 messages: 
                 [
@@ -50,6 +50,16 @@ const vue = new Vue({
                     { date: '10/01/2020 15:50:00', text: 'Si, ma preferirei andare al cinema', status: 'received' }
                 ],
             },
+            {
+                name: 'Gianluca',
+                avatar: '_8',
+                visible: true,
+                messages: 
+                [
+                    { date: '10/01/2020 15:30:55', text: 'Stasera alle 21 al campo da calcio!', status: 'sent' },
+                    { date: '10/01/2020 15:50:00', text: 'Non riesco più a venire, problema alla caviglia', status: 'received' }
+                ],
+            },
         ]
     },
     methods: {
@@ -70,7 +80,7 @@ const vue = new Vue({
             if(this.newMessage != '')
                 this.contacts[this.currentIndex].messages.push(
                     {
-                        text: this.newMessage, status: 'sent'
+                        text: this.newMessage, date: dayjs().format('DD/MM/YYYY hh:mm:ss'), status: 'sent'
                     }
                 ),
 
@@ -80,13 +90,27 @@ const vue = new Vue({
                 setTimeout(() => {
                     this.contacts[this.currentIndex].messages.push(
                         {
-                            text: 'Ok', status: 'received'
+                            text: 'Ok', date: dayjs().format('DD/MM/YYYY HH:mm:ss'), status: 'received'
                         }
                     )
                 }, 1000);
 
                 this.newMessage = '';
             },
+            lastAccess(){
+                let mess = this.contacts[this.currentIndex].messages.length -1; 
+                let lastAccessDate = this.contacts[this.currentIndex].messages[mess].date;
+                return lastAccessDate;
+            },
+            lastContactAccess(index) {
+                if(this.contacts[index].messages.length > 0){
+                    let mess = this.contacts[index].messages.length -1; 
+                    let lastAccessDate = this.contacts[index].messages[mess].date;
+                    return lastAccessDate;
+                }
+                return '';
+            }
+           
     },
     
 })
