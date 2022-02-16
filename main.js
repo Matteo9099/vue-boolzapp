@@ -86,7 +86,7 @@ const vue = new Vue({
             if(this.newMessage != '')
                 this.contacts[this.currentIndex].messages.push(
                     {
-                        text: this.newMessage, date: dayjs().format('DD/MM/YYYY hh:mm:ss'), status: 'sent'
+                        text: this.newMessage, date: dayjs().format('DD/MM/YYYY HH:mm:ss'), status: 'sent'
                     }
                 ),
 
