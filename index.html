@@ -96,6 +96,7 @@
                     <div class="chat" v-for="(message, index) in contacts[currentIndex].messages" :class="message.status">
                         <p>{{message.text}}
                             <i class="fa-solid fa-angle-down"></i>
+                            <span @click="deleteMessage(index)">Elimina messaggio</span>
                         </p>
                         <p class="date-message">{{message.date}}</p>
                     </div>
